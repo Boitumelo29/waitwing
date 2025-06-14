@@ -30,7 +30,7 @@ class UserRegistrationView extends StatelessWidget {
                 Text(
                   context.loc.waitWing,
                   style: context.textTheme.headlineLarge
-                      ?.copyWith(color: Colors.purple),
+                      ?.copyWith(color: context.colorScheme.primary),
                 ),
                 Text(context.loc.waitWingSub),
                 SizedBox(
@@ -65,7 +65,8 @@ class UserRegistrationView extends StatelessWidget {
                                 onTap: () {
                                   context.read<UserRegistrationBloc>().add(
                                       RegistrationSelected(
-                                          registrationType: RegistrationType.login));
+                                          registrationType:
+                                              RegistrationType.login));
                                 },
                                 title: context.loc.login,
                                 selected: loginSelected,
@@ -74,21 +75,21 @@ class UserRegistrationView extends StatelessWidget {
                                 onTap: () {
                                   context.read<UserRegistrationBloc>().add(
                                       RegistrationSelected(
-                                          registrationType: RegistrationType.sign));
+                                          registrationType:
+                                              RegistrationType.sign));
                                 },
                                 title: context.loc.signup,
                                 selected: signupSelected,
                               )
                             ],
                           ),
-                          signupSelected
-                              ? LongTextFieldForm(
-                                  onChanged: (value) {},
-                                  labelText: context.loc.username,
-                                  validator: (value) {
-                                    return Validation.usernameValidation(value);
-                                  })
-                              : SizedBox(),
+                          if (signupSelected)
+                            LongTextFieldForm(
+                                onChanged: (value) {},
+                                labelText: context.loc.username,
+                                validator: (value) {
+                                  return Validation.usernameValidation(value);
+                                }),
                           LongTextFieldForm(
                               onChanged: (value) {},
                               labelText: context.loc.email,
@@ -111,43 +112,39 @@ class UserRegistrationView extends StatelessWidget {
                                 child: Text(context.loc.forgotPassword),
                               ),
                             ),
-                          signupSelected
-                              ? LongTextFieldForm(
-                                  onChanged: (value) {},
-                                  labelText: context.loc.confirmPassword,
-                                  hintText: context.loc.confirmPassword,
-                                  validator: (value) {
-                                    return Validation.passwordConformValidation(
-                                        value, "");
-                                  })
-                              : SizedBox(),
+                          if (signupSelected)
+                            LongTextFieldForm(
+                                onChanged: (value) {},
+                                labelText: context.loc.confirmPassword,
+                                hintText: context.loc.confirmPassword,
+                                validator: (value) {
+                                  return Validation.passwordConformValidation(
+                                      value, "");
+                                }),
                           LongButton(
                               onTap: () {},
                               title: loginSelected
                                   ? context.loc.login
                                   : context.loc.signup,
                               isLoading: false),
-                          loginSelected
-                              ? Divider(
-                                  color: Colors.purple,
-                                )
-                              : SizedBox(),
-                          loginSelected
-                              ? Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    AuthContainer(
-                                        onPressed: () {},
-                                        iconData: Icons.facebook),
-                                    AuthContainer(
-                                        onPressed: () {},
-                                        iconData: Icons.g_mobiledata),
-                                    AuthContainer(
-                                        onPressed: () {}, iconData: Icons.apple)
-                                  ],
-                                )
-                              : SizedBox()
+                          if (loginSelected) ...[
+                            Divider(
+                              color: context.colorScheme.primary,
+                            ),
+                            Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  AuthContainer(
+                                      onPressed: () {},
+                                      iconData: Icons.facebook),
+                                  AuthContainer(
+                                      onPressed: () {},
+                                      iconData: Icons.g_mobiledata),
+                                  AuthContainer(
+                                      onPressed: () {}, iconData: Icons.apple)
+                                ])
+                          ]
                         ],
                       ),
                     ),
@@ -184,7 +181,7 @@ class RegistrationButton extends StatelessWidget {
             border: selected
                 ? Border(
                     bottom: BorderSide(
-                    color: Colors.purple,
+                    color: context.colorScheme.primary,
                     width: 5,
                   ))
                 : null),

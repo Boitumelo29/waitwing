@@ -8,17 +8,13 @@ part 'user_registration_bloc.freezed.dart';
 class UserRegistrationBloc
     extends Bloc<UserRegistrationEvent, UserRegistrationState> {
   UserRegistrationBloc() : super(UserRegistrationState()) {
-
-
     on<RegistrationSelected>((event, emit) {
-      final isLogin = event.registrationType == RegistrationType.sign;
-
+      final isLogin = event.registrationType == RegistrationType.login;
 
       emit(state.copyWith(
         loginSelected: isLogin,
         signUpSelected: !isLogin,
       ));
     });
-
   }
 }
