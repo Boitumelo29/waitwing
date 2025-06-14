@@ -11,8 +11,10 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppProvider(
-        child: ScreenUtilInit(
+    return
+        //AppProvider(
+        //child:
+        ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: (context, child) => MaterialApp.router(
         localizationsDelegates: const [
@@ -28,6 +30,7 @@ class App extends StatelessWidget {
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
       ),
-    ));
+      //)
+    );
   }
 }

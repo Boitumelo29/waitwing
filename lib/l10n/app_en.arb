@@ -1,5 +1,9 @@
 {
-"@@locale": "en",
-"hello": "Hello",
-"goodbye": "Goodbye"
+  "@@locale": "en",
+  "hello": "Hello",
+  "goodbye": "Goodbye",
+  "getStarted": "Get Started",
+  "waitWing": "Wait Wing",
+  "waitWingSub": "Queuing made simple.",
+  "waitWingQueueSystem": "Wait Wing Queue System"
 }

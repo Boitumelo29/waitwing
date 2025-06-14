@@ -16,17 +16,18 @@ class LongRectangleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: onTap,
-        child: Container(
-          width: 380,
-          height: 60,
-          decoration: BoxDecoration(
-            color: shouldHaveColor ? color : Colors.green,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Center(
-            child: Text(title),
-          ),
-        ));
+      onTap: onTap,
+      child: Container(
+        width: 380,
+        height: 60,
+        decoration: BoxDecoration(
+          color: shouldHaveColor ? color : Colors.purple,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Center(
+          child: Text(title),
+        ),
+      ),
+    );
   }
 }
