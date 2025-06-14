@@ -5,5 +5,13 @@
   "getStarted": "Get Started",
   "waitWing": "Wait Wing",
   "waitWingSub": "Queuing made simple.",
-  "waitWingQueueSystem": "Wait Wing Queue System"
+  "waitWingQueueSystem": "Wait Wing Queue System.",
+  "login": "Login",
+  "signup": "Sign Up",
+  "username": "Username",
+  "email": "Email",
+  "password": "Password",
+  "confirmPassword": "Confirm Password",
+  "forgotPassword": "Forgot Password?",
+  "continueWith": "Continue With"
 }
