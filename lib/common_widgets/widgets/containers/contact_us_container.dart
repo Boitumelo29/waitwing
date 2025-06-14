@@ -14,7 +14,7 @@ class ContactUsContainer extends StatelessWidget {
       width: 330,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.green, width: 1)),
+          border: Border.all(color: Colors.purple, width: 1)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,

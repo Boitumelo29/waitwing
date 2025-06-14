@@ -27,7 +27,7 @@ class LongTextField extends StatelessWidget {
         hintText: hintText,
         labelText: labelText,
         border: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.green),
+            borderSide: const BorderSide(color: Colors.purple),
             borderRadius: BorderRadius.circular(30)),
       ),
     );
@@ -90,7 +90,7 @@ class _LongTextFieldFormState extends State<LongTextFieldForm> {
             ? OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
                 borderSide: const BorderSide(
-                  color: Colors.green,
+                  color: Colors.purple,
                   width: 0.7,
                 ),
               )
@@ -101,7 +101,7 @@ class _LongTextFieldFormState extends State<LongTextFieldForm> {
             ? OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
                 borderSide: const BorderSide(
-                  color: Colors.green,
+                  color: Colors.purple,
                   width: 0.7,
                 ),
               )
@@ -125,11 +125,11 @@ class _LongTextFieldFormState extends State<LongTextFieldForm> {
         labelText: widget.labelText,
         prefixText: widget.prefixText,
         errorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.green),
+          borderSide: const BorderSide(color: Colors.purple),
           borderRadius: BorderRadius.circular(20),
         ),
         border: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.green),
+            borderSide: const BorderSide(color: Colors.purple),
             borderRadius: BorderRadius.circular(20)),
       ),
 
