@@ -1,7 +1,14 @@
-import 'dart:developer';
+import 'package:logger/logger.dart';
 
-void logI(Object message) => log(message.toString(), name: 'INFO');
+var logger = Logger();
 
-void logW(Object message) => log(message.toString(), name: 'WARNING');
+void logI(Object message) => logger.i(message.toString());
 
-void logE(Object message) => log(message.toString(), name: 'ERROR');
+void logW(Object message) => logger.w(
+      message.toString(),
+    );
+
+void logE(Object message) => logger.e(message.toString(), error: "Error");
+
+void logF(Object message, Object error, StackTrace stackTrace) =>
+    logger.e(message.toString(), error: error, stackTrace: stackTrace);
