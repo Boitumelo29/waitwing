@@ -1,39 +1,5 @@
 import 'package:flutter/material.dart';
 
-class LongTextField extends StatelessWidget {
-  //final GlobalKey globalkey;
-  final TextEditingController controller;
-  final String hintText;
-  final String labelText;
-  final bool? suffexIcon;
-
-  const LongTextField(
-      {super.key,
-      // required this.globalkey,
-      required this.controller,
-      required this.hintText,
-      required this.labelText,
-      this.suffexIcon});
-
-  @override
-  Widget build(BuildContext context) {
-    // suffexIcon = false;
-    return TextFormField(
-      //  key: globalkey,
-      controller: controller,
-      decoration: InputDecoration(
-        // suffix: suffexIcon ? Icon(Icons.remove_red_eye) : Icon(Icons.remove_red_eye),
-
-        hintText: hintText,
-        labelText: labelText,
-        border: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.purple),
-            borderRadius: BorderRadius.circular(30)),
-      ),
-    );
-  }
-}
-
 class LongTextFieldForm extends StatefulWidget {
   final TextEditingController? controller;
   final String? hintText;
