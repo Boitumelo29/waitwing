@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:waitwing/common_widgets/widgets/buttons/long_button.dart';
 import 'package:waitwing/core/extenstions/localization_extensions.dart';
 import 'package:waitwing/core/extenstions/theme_extensions.dart';
+import 'package:waitwing/core/routers/router.dart';
 import 'package:waitwing/gen/assets.gen.dart';
 
 class GetStartedView extends StatelessWidget {
@@ -40,7 +42,7 @@ class GetStartedView extends StatelessWidget {
               width: 300,
               child: LongButton(
                   onTap: () {
-                    //todo pushing to login screen / signup screen
+                    context.router.push(UserRegistrationRoute());
                   },
                   title: context.loc.getStarted,
                   isLoading: false),
