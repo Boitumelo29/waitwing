@@ -50,6 +50,7 @@ dependencies:
   expansion_tile_card: ^3.0.0
   image_picker: ^1.1.2
   flutter_gen_runner: ^5.10.0
+  logger: ^2.5.0
 
 dev_dependencies:
   flutter_test:
