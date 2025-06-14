@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:waitwing/feature/get_started/presentation/pages/get_started_page.dart';
+import 'package:waitwing/feature/user/user_registration/presentation/pages/user_registration_page.dart';
 
 part 'router.gr.dart';
 
@@ -11,7 +12,8 @@ class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-            page: GetStartedRoute.page, path: '/getStarted', initial: true)
+            page: GetStartedRoute.page, path: '/getStarted', initial: true),
+        AutoRoute(page: UserRegistrationRoute.page, path: '/userRegistration')
       ];
 }
 
