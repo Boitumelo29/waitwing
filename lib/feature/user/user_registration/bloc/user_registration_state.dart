@@ -9,9 +9,9 @@ class UserRegistrationState with _$UserRegistrationState {
 
   @override
   // TODO: implement loginSelected
-  bool get loginSelected => throw UnimplementedError();
+  bool get loginSelected => true;
 
   @override
   // TODO: implement signUpSelected
-  bool get signUpSelected => throw UnimplementedError();
+  bool get signUpSelected => false;
 }
