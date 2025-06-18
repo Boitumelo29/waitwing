@@ -11,4 +11,4 @@ void logW(Object message) => logger.w(
 void logE(Object message) => logger.e(message.toString(), error: "Error");
 
 void logF(Object message, Object error, StackTrace stackTrace) =>
-    logger.e(message.toString(), error: error, stackTrace: stackTrace);
+    logger.f(message.toString(), error: error, stackTrace: stackTrace);
