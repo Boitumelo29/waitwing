@@ -5,8 +5,10 @@ import 'package:waitwing/common_widgets/widgets/containers/auth_container.dart';
 import 'package:waitwing/common_widgets/widgets/textfield/textfields.dart';
 import 'package:waitwing/core/extenstions/localization_extensions.dart';
 import 'package:waitwing/core/extenstions/theme_extensions.dart';
+import 'package:waitwing/feature/auth/data/auth_repo.dart';
 import 'package:waitwing/feature/user/user_registration/bloc/user_registration_bloc.dart';
 import 'package:waitwing/gen/assets.gen.dart';
+import 'package:waitwing/utils/logger/logger.dart';
 import 'package:waitwing/utils/validation/validation.dart';
 
 class UserRegistrationView extends StatelessWidget {
@@ -14,6 +16,13 @@ class UserRegistrationView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AuthRepo authRepo = AuthRepo();
+    //final authRepo = context.read<AuthRepo>();
+
+    final TextEditingController email = TextEditingController();
+    final TextEditingController username = TextEditingController();
+    final TextEditingController password = TextEditingController();
+
     return BlocConsumer<UserRegistrationBloc, UserRegistrationState>(
       listener: (context, state) {
         // TODO: implement listener
@@ -86,11 +95,13 @@ class UserRegistrationView extends StatelessWidget {
                           if (signupSelected)
                             LongTextFieldForm(
                                 onChanged: (value) {},
+                                controller: username,
                                 labelText: context.loc.username,
                                 validator: (value) {
                                   return Validation.usernameValidation(value);
                                 }),
                           LongTextFieldForm(
+                              controller: email,
                               onChanged: (value) {},
                               labelText: context.loc.email,
                               hintText: context.loc.email,
@@ -98,6 +109,7 @@ class UserRegistrationView extends StatelessWidget {
                                 return Validation.emailValidation(value);
                               }),
                           LongTextFieldForm(
+                              controller: password,
                               onChanged: (value) {},
                               labelText: context.loc.password,
                               hintText: context.loc.password,
@@ -122,7 +134,13 @@ class UserRegistrationView extends StatelessWidget {
                                       value, "");
                                 }),
                           LongButton(
-                              onTap: () {},
+                              onTap: () {
+                                logW(email.text.trim());
+                                authRepo.signUp(
+                                    email: email.text.trim(),
+                                    password: password.text.trim(),
+                                    username: username.text.trim());
+                              },
                               title: loginSelected
                                   ? context.loc.login
                                   : context.loc.signup,
