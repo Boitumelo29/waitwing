@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:waitwing/core/provider/app_provider.dart';
+import 'package:waitwing/core/provider/app_provider.dart';
 import 'package:waitwing/core/routers/router.dart';
 import 'package:waitwing/l10n/app_localizations.dart';
 import 'package:waitwing/utils/theme/colour_scheme.dart';
@@ -14,8 +14,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-        //AppProvider(
-        //child:
+        AppProvider(
+        child:
         ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: (context, child) => MaterialApp.router(
@@ -37,7 +37,7 @@ class App extends StatelessWidget {
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
       ),
-      //)
+      )
     );
   }
 }
