@@ -38,7 +38,9 @@ class AuthRepo {
       final response = await client.auth
           .signInWithPassword(password: password, email: email);
 
-      if (response.user == null || response.session == null) throw AuthException(response.toString());
+      if (response.user == null || response.session == null) {
+        throw AuthException(response.toString());
+      }
 
       return right(response);
     } catch (e) {
@@ -46,4 +48,23 @@ class AuthRepo {
       return left(Failure(message: "Sign In Fail: ${e.toString()}"));
     }
   }
+
+  //signOut
+  Future<Either<Failure, Unit>> signOut() async {
+    try {
+      await client.auth.signOut();
+      return right(unit);
+    } catch (e) {
+      logE(e);
+      return left(Failure(message: "Unable to signOut: ${e.toString()}"));
+    }
+  }
+
+  //getCurrentUser
+  User? get currentUser => client.auth.currentUser;
+
+  //getCurrentSession
+  Session? get currentSession => client.auth.currentSession;
+
+  Stream<AuthState> get authStateChange => client.auth.onAuthStateChange;
 }
