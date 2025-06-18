@@ -1,70 +1,21 @@
 import 'package:dartz/dartz.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:waitwing/core/failure/failures.dart';
-import 'package:waitwing/utils/logger/logger.dart';
 
-class AuthRepo {
-  final SupabaseClient client = Supabase.instance.client;
-
-  //signup user
+abstract class AuthRepo {
   Future<Either<Failure, AuthResponse>> signUp(
       {required String email,
       required String password,
-      required String username}) async {
-    try {
-      final response = await client.auth.signUp(
-          email: email, password: password, data: {"displayName": username});
+      required String username});
 
-      if (response.user == null) {
-        logE("User: ${response.toString()}");
-        return left(Failure(message: "Sign up failed. Please try again."));
-      } else {
-        return right(response);
-      }
-    } on AuthException catch (e) {
-      logE("Auth error: ${e.message}");
-      return left(Failure(message: e.message));
-    } catch (e) {
-      logE("We have failed ${e.toString()}");
-      return left(
-          Failure(message: "An unexpected error occurred. Please try again."));
-    }
-  }
-
-  //sign in user
   Future<Either<Failure, AuthResponse>> signIn(
-      {required String email, required String password}) async {
-    try {
-      final response = await client.auth
-          .signInWithPassword(password: password, email: email);
+      {required String email, required String password});
 
-      if (response.user == null || response.session == null) {
-        throw AuthException(response.toString());
-      }
+  Future<Either<Failure, Unit>> signOut();
 
-      return right(response);
-    } catch (e) {
-      logE(e);
-      return left(Failure(message: "Sign In Fail: ${e.toString()}"));
-    }
-  }
+  User? get currentUser;
 
-  //signOut
-  Future<Either<Failure, Unit>> signOut() async {
-    try {
-      await client.auth.signOut();
-      return right(unit);
-    } catch (e) {
-      logE(e);
-      return left(Failure(message: "Unable to signOut: ${e.toString()}"));
-    }
-  }
+  Session? get currentSession;
 
-  //getCurrentUser
-  User? get currentUser => client.auth.currentUser;
-
-  //getCurrentSession
-  Session? get currentSession => client.auth.currentSession;
-
-  Stream<AuthState> get authStateChange => client.auth.onAuthStateChange;
+  Stream<AuthState> get authStateChange;
 }

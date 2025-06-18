@@ -5,10 +5,8 @@ import 'package:waitwing/common_widgets/widgets/containers/auth_container.dart';
 import 'package:waitwing/common_widgets/widgets/textfield/textfields.dart';
 import 'package:waitwing/core/extenstions/localization_extensions.dart';
 import 'package:waitwing/core/extenstions/theme_extensions.dart';
-import 'package:waitwing/feature/auth/data/auth_repo.dart';
 import 'package:waitwing/feature/user/user_registration/bloc/user_registration_bloc.dart';
 import 'package:waitwing/gen/assets.gen.dart';
-import 'package:waitwing/utils/logger/logger.dart';
 import 'package:waitwing/utils/validation/validation.dart';
 
 class UserRegistrationView extends StatelessWidget {
@@ -16,17 +14,12 @@ class UserRegistrationView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AuthRepo authRepo = AuthRepo();
-    //final authRepo = context.read<AuthRepo>();
-
     final TextEditingController email = TextEditingController();
     final TextEditingController username = TextEditingController();
     final TextEditingController password = TextEditingController();
 
     return BlocConsumer<UserRegistrationBloc, UserRegistrationState>(
-      listener: (context, state) {
-        // TODO: implement listener
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         final loginSelected = state.loginSelected;
         final signupSelected = state.signUpSelected;
@@ -135,11 +128,16 @@ class UserRegistrationView extends StatelessWidget {
                                 }),
                           LongButton(
                               onTap: () {
-                                logW(email.text.trim());
-                                authRepo.signUp(
-                                    email: email.text.trim(),
-                                    password: password.text.trim(),
-                                    username: username.text.trim());
+                                loginSelected
+                                    ? context.read<UserRegistrationBloc>().add(
+                                        Login(
+                                            email: email.text.trim(),
+                                            password: password.text.trim()))
+                                    : context.read<UserRegistrationBloc>().add(
+                                        SignUp(
+                                            email: email.text.trim(),
+                                            password: password.text.trim(),
+                                            username: username.text.trim()));
                               },
                               title: loginSelected
                                   ? context.loc.login
