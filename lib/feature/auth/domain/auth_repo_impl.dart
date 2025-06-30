@@ -75,4 +75,10 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Stream<AuthState> get authStateChange => client.auth.onAuthStateChange;
 
+  @override
+  Future<bool> isUserLoggedIn()async {
+    final session = client.auth.currentSession;
+    return session != null;
+  }
+
 }
