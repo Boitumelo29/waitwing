@@ -1,5 +1,7 @@
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:waitwing/core/failure/failures.dart';
 import 'package:waitwing/feature/auth/data/auth_repo.dart';
 import 'package:waitwing/utils/logger/logger.dart';
 
@@ -23,20 +25,32 @@ class UserRegistrationBloc
       ));
     });
 
-    on<Login>((event, emit) {
+    on<Login>((event, emit) async {
       try {
-        authRepo.signIn(email: event.email, password: event.password);
+        final eitherFailureOrUnit =
+            await authRepo.signIn(email: event.email, password: event.password);
+
+        eitherFailureOrUnit.fold((failure) {
+          emit(state.copyWith(loginEitherFailureOrUnit: some(Left(failure))));
+        }, (_) {
+          emit(state.copyWith(loginEitherFailureOrUnit: some(Right(unit))));
+        });
       } catch (e) {
         logE(e);
       }
     });
 
-    on<SignUp>((event, emit) {
+    on<SignUp>((event, emit) async {
       try {
-        authRepo.signUp(
+        final eitherFailureOrUnit = await authRepo.signUp(
             email: event.email,
             password: event.password,
             username: event.username);
+        eitherFailureOrUnit.fold((failure) {
+          emit(state.copyWith(loginEitherFailureOrUnit: some(Left(failure))));
+        }, (_) {
+          emit(state.copyWith(loginEitherFailureOrUnit: some(Right(unit))));
+        });
       } catch (e) {
         logE(e);
       }
