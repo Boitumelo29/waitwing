@@ -7,6 +7,7 @@ import 'package:waitwing/utils/theme/colour_scheme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class App extends StatelessWidget {
+
   App({super.key});
 
   final _appRouter = AppRouter();
