@@ -13,6 +13,8 @@ abstract class AuthRepo {
 
   Future<Either<Failure, Unit>> signOut();
 
+  Future<bool> isUserLoggedIn();
+
   User? get currentUser;
 
   Session? get currentSession;
