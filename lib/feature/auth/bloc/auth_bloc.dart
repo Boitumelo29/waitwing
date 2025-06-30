@@ -21,7 +21,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       try {
         final currentUser = authRepo.currentUser;
         final session = authRepo.currentSession;
-        logI("This is our user");
+        logI("This is our user: $currentUser");
 
         if (currentUser != null && session != null) {
           emit(state.copyWith(
