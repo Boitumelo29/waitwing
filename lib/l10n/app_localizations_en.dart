@@ -28,6 +28,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get login => 'Login';
 
   @override
+  String get guest => 'Guest';
+
+  @override
   String get signup => 'Sign Up';
 
   @override
@@ -35,6 +38,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get email => 'Email';
+
+  @override
+  String get phoneNumber => 'Phone number';
 
   @override
   String get password => 'Password';
@@ -47,4 +53,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get continueWith => 'Continue With';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get store => 'Store';
+
+  @override
+  String get review => 'Reviews';
+
+  @override
+  String get workspace => 'Workspace';
+
+  @override
+  String get helpSupport => 'Help & Support';
+
+  @override
+  String get faq => 'FAQ';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get fullName => 'Full Name';
+
+  @override
+  String get gender => 'Gender';
+
+  @override
+  String get dob => 'DOB';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get pickPic => 'Pick a picture';
 }

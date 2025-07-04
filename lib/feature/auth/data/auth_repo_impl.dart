@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:waitwing/core/failure/failures.dart';
-import 'package:waitwing/feature/auth/data/auth_repo.dart';
+import 'package:waitwing/feature/auth/domain/auth_repo.dart';
 import 'package:waitwing/utils/logger/logger.dart';
 
 class AuthRepoImpl extends AuthRepo {

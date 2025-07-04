@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:waitwing/feature/auth/data/auth_repo.dart';
+import 'package:waitwing/feature/auth/domain/auth_repo.dart';
 import 'package:waitwing/utils/logger/logger.dart';
 
 part 'auth_event.dart';
@@ -27,7 +27,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(state.copyWith(
               status: AuthStatus.authenticated, user: currentUser));
         } else {
-          logE("User is null.");
+
           emit(state.copyWith(status: AuthStatus.unauthenticated, user: null));
         }
       } catch (e) {

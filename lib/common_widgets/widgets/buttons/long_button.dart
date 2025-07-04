@@ -9,7 +9,7 @@ class LongButton extends StatelessWidget {
       {super.key,
       required this.onTap,
       required this.title,
-      required this.isLoading});
+      this.isLoading = false});
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +39,3 @@ class LongButton extends StatelessWidget {
     );
   }
 }
-
-
-
