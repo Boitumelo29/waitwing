@@ -35,7 +35,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       try {
         imageRepository.getUserImage(event.img, event.accountId);
       } catch (e) {
-        print("we have an error");
+        logE("we have an error");
       }
     });
     on<FetchUserImage>((event, emit) async {
