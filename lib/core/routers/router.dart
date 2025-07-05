@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:waitwing/feature/get_started/presentation/pages/get_started_page.dart';
 import 'package:waitwing/feature/home/presentation/page/home_page.dart';
+import 'package:waitwing/feature/home/presentation/page/home_view.dart';
 import 'package:waitwing/feature/splash_screen/splash_screen.dart';
 import 'package:waitwing/feature/user/user_profile/presentation/page/user_pages/edit_user_profile_screen.dart';
 import 'package:waitwing/feature/user/user_profile/presentation/page/user_profile_screen.dart';
@@ -27,7 +28,9 @@ class AppRouter extends RootStackRouter {
             path: '/userRegistration',
             guards: [AuthGuard()]),
         AutoRoute(page: TabBarRoute.page, path: '/tabBarRoute', children: [
-          AutoRoute(page: HomeRoute.page, path: 'homeRoute'),
+          AutoRoute(page: HomeWrapperRoute.page, path: 'homeWrapperRoute', children: [
+        AutoRoute(page: HomeRoute.page, path: 'homeRoute',)
+          ]),
           AutoRoute(
               page: UserProfileWrapperRoute.page,
               path: 'userProfileWrapperRoute',
