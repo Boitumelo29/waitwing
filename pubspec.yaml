@@ -54,6 +54,7 @@ dependencies:
   envied: ^1.1.1
   supabase_flutter: ^2.9.1
   get: ^4.7.2
+  syncfusion_flutter_calendar: ^29.1.38
 
 dev_dependencies:
   flutter_test:
