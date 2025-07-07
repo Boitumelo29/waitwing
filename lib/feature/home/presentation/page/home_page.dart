@@ -1,13 +1,17 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:waitwing/feature/home/presentation/page/home_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:waitwing/feature/home/bloc/home_bloc.dart';
 
 @RoutePage()
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomeWrapperPage extends StatelessWidget {
+  const HomeWrapperPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return HomeView();
+    return BlocProvider(
+      create: (context) => HomeBloc(),
+      child: AutoRouter(),
+    );
   }
 }
