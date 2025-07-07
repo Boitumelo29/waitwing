@@ -89,4 +89,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pickPic => 'Pick a picture';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get addTask => 'Add a Task';
+
+  @override
+  String get enterTask => 'Enter Task';
+
+  @override
+  String get date => 'Date';
+
+  @override
+  String get taskType => 'Task Type';
+
+  @override
+  String get start => 'Start';
+
+  @override
+  String get end => 'End';
+
+  @override
+  String get editTask => 'Edit Task';
+
+  @override
+  String get task => 'Task';
 }

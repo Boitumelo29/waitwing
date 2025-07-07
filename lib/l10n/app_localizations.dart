@@ -260,6 +260,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Pick a picture'**
   String get pickPic;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @addTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a Task'**
+  String get addTask;
+
+  /// No description provided for @enterTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Task'**
+  String get enterTask;
+
+  /// No description provided for @date.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get date;
+
+  /// No description provided for @taskType.
+  ///
+  /// In en, this message translates to:
+  /// **'Task Type'**
+  String get taskType;
+
+  /// No description provided for @start.
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get start;
+
+  /// No description provided for @end.
+  ///
+  /// In en, this message translates to:
+  /// **'End'**
+  String get end;
+
+  /// No description provided for @editTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Task'**
+  String get editTask;
+
+  /// No description provided for @task.
+  ///
+  /// In en, this message translates to:
+  /// **'Task'**
+  String get task;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

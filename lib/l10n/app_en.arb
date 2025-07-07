@@ -27,5 +27,14 @@
   "gender": "Gender",
   "dob": "DOB",
   "save": "Save",
-  "pickPic": "Pick a picture"
+  "pickPic": "Pick a picture",
+  "home": "Home",
+  "addTask": "Add a Task",
+  "enterTask": "Enter Task",
+  "date": "Date",
+  "taskType": "Task Type",
+  "start": "Start",
+  "end": "End",
+  "editTask": "Edit Task",
+  "task": "Task"
 }
