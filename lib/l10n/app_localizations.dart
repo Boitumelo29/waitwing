@@ -314,6 +314,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Task'**
   String get task;
+
+  /// No description provided for @za.
+  ///
+  /// In en, this message translates to:
+  /// **'ZA'**
+  String get za;
+
+  /// No description provided for @addNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Notes'**
+  String get addNotes;
+
+  /// No description provided for @addClient.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Client'**
+  String get addClient;
+
+  /// No description provided for @noClient.
+  ///
+  /// In en, this message translates to:
+  /// **'No Client'**
+  String get noClient;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

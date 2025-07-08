@@ -116,4 +116,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get task => 'Task';
+
+  @override
+  String get za => 'ZA';
+
+  @override
+  String get addNotes => 'Add Notes';
+
+  @override
+  String get addClient => 'Add Client';
+
+  @override
+  String get noClient => 'No Client';
 }
