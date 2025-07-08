@@ -1,4 +1,7 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:waitwing/feature/clients/presentation/page/add_client/add_client_page.dart';
+import 'package:waitwing/feature/clients/presentation/page/client/client_page.dart';
+import 'package:waitwing/feature/clients/presentation/page/client/client_view.dart';
 import 'package:waitwing/feature/get_started/presentation/pages/get_started_page.dart';
 import 'package:waitwing/feature/home/presentation/page/home_page.dart';
 import 'package:waitwing/feature/home/presentation/page/home_view.dart';
@@ -28,9 +31,15 @@ class AppRouter extends RootStackRouter {
             path: '/userRegistration',
             guards: [AuthGuard()]),
         AutoRoute(page: TabBarRoute.page, path: '/tabBarRoute', children: [
-          AutoRoute(page: HomeWrapperRoute.page, path: 'homeWrapperRoute', children: [
-        AutoRoute(page: HomeRoute.page, path: 'homeRoute',)
-          ]),
+          AutoRoute(
+              page: HomeWrapperRoute.page,
+              path: 'homeWrapperRoute',
+              children: [
+                AutoRoute(
+                  page: HomeRoute.page,
+                  path: 'homeRoute',
+                )
+              ]),
           AutoRoute(
               page: UserProfileWrapperRoute.page,
               path: 'userProfileWrapperRoute',
@@ -41,6 +50,15 @@ class AppRouter extends RootStackRouter {
                     page: EditUserProfileRoute.page,
                     path: 'editUserProfileRoute')
               ]),
+          AutoRoute(
+            page: ClientWrapperRoute.page,
+            path: 'clientWrapperRoute',
+            children: [
+              AutoRoute(page: ClientRoute.page, path: 'clientRoute'),
+              AutoRoute(page: AddClientWrapperRoute.page, path: 'addClientRoute'), // <-- Move here
+            ],
+          ),
+
         ], guards: [
           AuthGuard()
         ]),
