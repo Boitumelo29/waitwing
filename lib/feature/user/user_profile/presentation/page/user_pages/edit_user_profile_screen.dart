@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:waitwing/common_widgets/widgets/buttons/long_button.dart';
 import 'package:waitwing/common_widgets/widgets/loading/loading_widget.dart';
+import 'package:waitwing/common_widgets/widgets/textfield/phone_number_input_fields.dart';
 import 'package:waitwing/common_widgets/widgets/textfield/textfields.dart';
 import 'package:waitwing/core/extenstions/localization_extensions.dart';
 import 'package:waitwing/core/extenstions/theme_extensions.dart';
@@ -19,6 +20,7 @@ class EditUserProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<UserBloc, UserState>(
       builder: (context, state) {
+        final TextEditingController phoneNumber = TextEditingController();
         final user = state.currentUser;
         return Scaffold(
           appBar: AppBar(
@@ -126,12 +128,10 @@ class EditUserProfileScreen extends StatelessWidget {
                             validator: (value) {
                               return Validation.emailValidation(value);
                             }),
-                        LongTextFieldForm(
-                            onChanged: (value) {},
-                            labelText: context.loc.phoneNumber,
-                            validator: (value) {
-                              return Validation.cellphoneValidation(value);
-                            }),
+                        PhoneNumberInputField(
+                          controller: phoneNumber,
+                          onChanged: (value) {},
+                        ),
                         LongButton(onTap: () {}, title: context.loc.save)
                       ],
                     ),
