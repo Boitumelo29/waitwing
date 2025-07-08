@@ -1,14 +1,15 @@
+import 'package:intl_phone_field/phone_number.dart';
+
 class Validation {
   static String? emailValidation(String? value) {
     if (value == null ||
         value.isEmpty ||
-        !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
             .hasMatch(value)) {
       return "Email is not valid";
     }
     return null;
   }
-
 
   static String? usersEmailValidation(String? value) {
     if (value == null || value.isEmpty) {
@@ -25,15 +26,12 @@ class Validation {
     return null;
   }
 
-  static String? cellphoneValidation(String? value) {
-    if (value == null || value.isEmpty) {
+  static String? cellphoneValidation(PhoneNumber? value) {
+    if (value == null) {
       return "Cellphone number is not valid";
-    } else if (value.length <= 9) {
-      return "Cellphone must be 10 digits";
     }
     return null;
   }
-
 
   static String? passwordConformValidation(
       String? value, String? confirmValue) {
@@ -53,6 +51,7 @@ class Validation {
     }
     return null;
   }
+
   static String? lastnameValidation(String? value) {
     if (value == null || value.isEmpty) {
       return "Lastname is empty";

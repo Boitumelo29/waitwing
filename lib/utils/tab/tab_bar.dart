@@ -15,7 +15,8 @@ class _TabBarViewState extends State<TabBarView> {
   Widget build(BuildContext context) {
     return AutoTabsRouter(
         routes: [
-           HomeRoute(),
+          HomeRoute(),
+          ClientRoute(),
           UserProfileRoute(),
         ],
         builder: (context, child) {
@@ -28,6 +29,8 @@ class _TabBarViewState extends State<TabBarView> {
                 items: [
                   BottomNavigationBarItem(
                       icon: Icon(Icons.home), label: "Home"),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.add), label: "Client"),
                   BottomNavigationBarItem(
                       icon: Icon(Icons.person), label: "Person")
                 ]),

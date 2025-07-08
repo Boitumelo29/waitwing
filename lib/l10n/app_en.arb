@@ -36,5 +36,9 @@
   "start": "Start",
   "end": "End",
   "editTask": "Edit Task",
-  "task": "Task"
+  "task": "Task",
+  "za": "ZA",
+  "addNotes": "Add Notes",
+  "addClient": "Add Client",
+  "noClient": "No Client"
 }
