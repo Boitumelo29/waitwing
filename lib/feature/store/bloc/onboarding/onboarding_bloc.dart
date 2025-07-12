@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:waitwing/feature/store/data/google_places_service.dart';
+import 'package:waitwing/feature/store/domain/google_places_services.dart';
 import 'package:waitwing/utils/logger/logger.dart';
 
 part 'onboarding_event.dart';
