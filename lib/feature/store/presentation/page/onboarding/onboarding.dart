@@ -69,7 +69,6 @@ class _OnboardingViewState extends State<OnboardingView> {
   Widget build(BuildContext context) {
     return BlocConsumer<OnboardingBloc, OnboardingState>(
       listener: (context, state) {
-        // TODO: implement listener
       },
       builder: (context, state) {
         return Scaffold(
