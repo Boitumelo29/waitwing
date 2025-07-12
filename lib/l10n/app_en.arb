@@ -40,5 +40,16 @@
   "za": "ZA",
   "addNotes": "Add Notes",
   "addClient": "Add Client",
-  "noClient": "No Client"
+  "noClient": "No Client",
+  "finish": "Finish",
+  "next": "Next",
+  "tellBusiness": "Tell us about your business",
+  "tellBusinessSub": "What is the name your clients will see when searching your business and booking",
+  "businessName": "Business Name",
+  "businessEmail": "Business Email (optional)",
+  "businessSlogan": "Business slogan (optional)",
+  "describeContent": "Describe your content",
+  "describeContentSub": "What does your store have to offer.",
+  "addAddress": "Add Your Address",
+  "searchAddress": "Search Address"
 }

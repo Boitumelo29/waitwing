@@ -5,13 +5,14 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:waitwing/core/failure/failures.dart';
+import 'package:waitwing/core/shared/domain/image_repo.dart';
 import 'package:waitwing/utils/logger/logger.dart';
 
-class ImageRepository {
+class ImageRepositoryImp implements ImageRepository {
+  @override
   Future<Either<Failure, Unit>> getUserImage(
       ImageSource img, String accountId) async {
     try {
-      logI("I am here");
       final picker = ImagePicker();
       final pickedFile = await picker.pickImage(source: img);
       if (pickedFile != null) {
@@ -29,6 +30,7 @@ class ImageRepository {
     }
   }
 
+  @override
   Future<Either<Failure, Uint8List>> fetchUserImage(String accountId) async {
     try {
       final prefs = await SharedPreferences.getInstance();

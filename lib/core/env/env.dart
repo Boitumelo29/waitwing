@@ -16,4 +16,7 @@ abstract class Env {
 
   @EnviedField(varName: 'SUPABASE_ANONKEY', obfuscate: true)
   static  String supaBaseAnonKey = _Env.supaBaseAnonKey;
+
+  @EnviedField(varName: 'GOOGLEMAPS_KEY', obfuscate: true)
+  static  String googleMapsKey = _Env.googleMapsKey;
 }
