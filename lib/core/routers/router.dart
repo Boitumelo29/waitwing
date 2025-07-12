@@ -6,6 +6,8 @@ import 'package:waitwing/feature/get_started/presentation/pages/get_started_page
 import 'package:waitwing/feature/home/presentation/page/home_page.dart';
 import 'package:waitwing/feature/home/presentation/page/home_view.dart';
 import 'package:waitwing/feature/splash_screen/splash_screen.dart';
+import 'package:waitwing/feature/store/presentation/page/onboarding/onboarding_screen.dart';
+import 'package:waitwing/feature/store/presentation/page/store.dart';
 import 'package:waitwing/feature/user/user_profile/presentation/page/user_pages/edit_user_profile_screen.dart';
 import 'package:waitwing/feature/user/user_profile/presentation/page/user_profile_screen.dart';
 import 'package:waitwing/feature/user/user_profile/presentation/page/user_profile_view.dart';
@@ -48,14 +50,20 @@ class AppRouter extends RootStackRouter {
                     page: UserProfileRoute.page, path: "userProfileRoute"),
                 AutoRoute(
                     page: EditUserProfileRoute.page,
-                    path: 'editUserProfileRoute')
+                    path: 'editUserProfileRoute'),
+                AutoRoute(
+                    page: OnboardingRoute.page,
+                    path: 'onboardingRoute'),
+                AutoRoute(
+                    page: StoreRoute.page,
+                    path: 'storeRoute')
               ]),
           AutoRoute(
             page: ClientWrapperRoute.page,
             path: 'clientWrapperRoute',
             children: [
               AutoRoute(page: ClientRoute.page, path: 'clientRoute'),
-              AutoRoute(page: AddClientWrapperRoute.page, path: 'addClientRoute'), // <-- Move here
+              AutoRoute(page: AddClientWrapperRoute.page, path: 'addClientRoute'),
             ],
           ),
 
