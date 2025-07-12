@@ -128,4 +128,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noClient => 'No Client';
+
+  @override
+  String get finish => 'Finish';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get tellBusiness => 'Tell us about your business';
+
+  @override
+  String get tellBusinessSub => 'What is the name your clients will see when searching your business and booking';
+
+  @override
+  String get businessName => 'Business Name';
+
+  @override
+  String get businessEmail => 'Business Email (optional)';
+
+  @override
+  String get businessSlogan => 'Business slogan (optional)';
+
+  @override
+  String get describeContent => 'Describe your content';
+
+  @override
+  String get describeContentSub => 'What does your store have to offer.';
+
+  @override
+  String get addAddress => 'Add Your Address';
+
+  @override
+  String get searchAddress => 'Search Address';
 }

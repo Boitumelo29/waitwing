@@ -338,6 +338,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No Client'**
   String get noClient;
+
+  /// No description provided for @finish.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish'**
+  String get finish;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// No description provided for @tellBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us about your business'**
+  String get tellBusiness;
+
+  /// No description provided for @tellBusinessSub.
+  ///
+  /// In en, this message translates to:
+  /// **'What is the name your clients will see when searching your business and booking'**
+  String get tellBusinessSub;
+
+  /// No description provided for @businessName.
+  ///
+  /// In en, this message translates to:
+  /// **'Business Name'**
+  String get businessName;
+
+  /// No description provided for @businessEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Business Email (optional)'**
+  String get businessEmail;
+
+  /// No description provided for @businessSlogan.
+  ///
+  /// In en, this message translates to:
+  /// **'Business slogan (optional)'**
+  String get businessSlogan;
+
+  /// No description provided for @describeContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe your content'**
+  String get describeContent;
+
+  /// No description provided for @describeContentSub.
+  ///
+  /// In en, this message translates to:
+  /// **'What does your store have to offer.'**
+  String get describeContentSub;
+
+  /// No description provided for @addAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Your Address'**
+  String get addAddress;
+
+  /// No description provided for @searchAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Search Address'**
+  String get searchAddress;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
