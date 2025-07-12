@@ -11,7 +11,7 @@ class ImageRepository {
   Future<Either<Failure, Unit>> getUserImage(
       ImageSource img, String accountId) async {
     try {
-      logI("I am here");
+
       final picker = ImagePicker();
       final pickedFile = await picker.pickImage(source: img);
       if (pickedFile != null) {
