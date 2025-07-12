@@ -46,7 +46,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
           final imageEither = await imageRepository.fetchUserImage(user.id);
 
           imageEither.fold(
-            (failure) => logE("Failed to fetch image: $failure"),
+            (failure) => logW("Failed to fetch image: $failure"),
             (imageBytes) {
               final base64String = base64Encode(imageBytes);
               emit(state.copyWith(userImage: base64String));
