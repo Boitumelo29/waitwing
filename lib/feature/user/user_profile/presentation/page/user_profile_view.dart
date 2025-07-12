@@ -47,7 +47,9 @@ class UserProfileView extends StatelessWidget {
                                 child: Text(state.username[0]),
                               ),
                         Text(state.username),
-                        Text(user.email ?? context.loc.guest,),
+                        Text(
+                          user.email ?? context.loc.guest,
+                        ),
                         SizedBox(
                           height: 50,
                           width: 200,
@@ -65,7 +67,12 @@ class UserProfileView extends StatelessWidget {
                           ),
                         ),
                         UserProfileDrawer(
-                            iconData: Icons.shop, title: context.loc.store),
+                          iconData: Icons.shop,
+                          title: context.loc.store,
+                          onTap: () {
+                            context.router.push(OnboardingRoute());
+                          },
+                        ),
                         UserProfileDrawer(
                             iconData: Icons.star, title: context.loc.review),
                         UserProfileDrawer(
