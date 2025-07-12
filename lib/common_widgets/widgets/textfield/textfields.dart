@@ -11,15 +11,15 @@ class LongTextFieldForm extends StatefulWidget {
   final String? prefixText;
   final String? Function(String?)? validator;
   final FocusNode? focusNode;
-  final Function(String) onChanged;
+  final Function(String)? onChanged;
   final bool isRed;
 
   const LongTextFieldForm(
       {super.key,
       this.controller,
       this.focusNode,
-      required this.onChanged,
-       this.hintText,
+      this.onChanged,
+      this.hintText,
       required this.labelText,
       this.showSuffixIcon = false,
       this.showPrefixIcon = false,
